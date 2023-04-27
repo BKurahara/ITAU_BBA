@@ -1,9 +1,10 @@
 import "./Header.scss";
+import itauLogo from "../assets/itau-bba.svg";
 
 const Header = () => {
   return (
     <div className="header-bar">
-      <h1>Itau BBa</h1>
+      <img className="logo" src={itauLogo} alt="Logo itaú" />
       <div className="header-content">
         <h2>PT</h2>
         <span className="header-ornament"></span>
