@@ -7,6 +7,7 @@ import Polo from "./routes/Polo.jsx";
 // Imports
 import Home from "./routes/Home.jsx";
 
+import Search from "./routes/Search.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "polo/:id",
         element: <Polo />,
+      },
+      {
+        path: "search",
+        element: <Search />,
       },
     ],
   },

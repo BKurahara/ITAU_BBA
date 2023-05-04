@@ -1,0 +1,109 @@
+.polo-body {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0 0 4rem;
+  .title {
+    font-size: 2rem;
+    font-weight: 900;
+  }
+  > .subtitle {
+    font-size: 1.2rem;
+    font-weight: 200;
+    padding-bottom: 3rem;
+    color: gray;
+  }
+  > .form-polo {
+    > .form-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: gray;
+      padding-bottom: 2rem;
+    }
+    > .input-container {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      margin-bottom: 5rem;
+      > label {
+        position: relative;
+        > span {
+          position: absolute;
+          top: -13px;
+          background-color: #fff;
+          font-size: 0.8rem;
+          left: 5px;
+          padding: 2px;
+        }
+        input,
+        select {
+          height: 60px;
+          border-radius: 5px;
+          padding: 0 1rem;
+          font-size: 1.2rem;
+        }
+      }
+      > .cep-label {
+        > .cep-input {
+          width: 200px;
+        }
+      }
+      > .street-label {
+        > span {
+          position: absolute;
+          top: -13px;
+          background-color: #fff;
+          font-size: 0.8rem;
+          left: 5px;
+          padding: 2px;
+        }
+        > .street-input {
+          width: 600px;
+        }
+      }
+      > .bairro-label {
+        > .bairro-input {
+          width: 150px;
+        }
+      }
+      > .city-label {
+        > .city-input {
+          width: 150px;
+        }
+      }
+      > .country-label {
+        > .country-input {
+          width: 100px;
+        }
+      }
+    }
+    > .form-buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      > .back {
+        padding: 1rem 2rem;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        background-color: gray;
+        border-radius: 10px;
+        > .link {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+      > .submit {
+        padding: 1rem 2rem;
+        border: none;
+        background-color: orange;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 10px;
+      }
+    }
+  }
+}

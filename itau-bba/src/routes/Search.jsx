@@ -1,30 +1,23 @@
 import React from "react";
-import { useState } from "react";
-import { AiFillEye } from "react-icons/ai";
-import SearchForm from "../components/SearchForm";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 
-import "./Home.scss";
-
-const url = "http://localhost:3000/ibusiness";
-
-const Home = () => {
-  const [ibusiness, setIbusiness] = useState([]);
-
+const Search = () => {
+  const [searchParams] = useSearchParams();
+  const url = "http://localhost:3000/ibusiness?" + searchParams;
   const { data: polos } = useFetch(url);
-
   return (
     <div className="home-container">
       <div className="title-search-container">
         <div className="title-container">
-          <h1 className="title"> Polos Itaú</h1>
-          <h2 className="second-title">
-            Confira abaixo alguns dos principais polos do Itaú
-          </h2>
+          <h1 className="title"> Resultado da pesquisa</h1>
         </div>
         <div className="search-bar">
-          <SearchForm />
+          <button className="back">
+            <Link className="link" to={`/`}>
+              Voltar
+            </Link>
+          </button>
         </div>
       </div>
       <div className="table-container">
@@ -44,16 +37,14 @@ const Home = () => {
                 <tr key={polos.id}>
                   <th className="grid-row">{polos.name}</th>
                   <th className="grid-row">{polos.business}</th>
-                  <th className="grid-row">R$ {polos.valuation}</th>
+                  <th className="grid-row">{polos.valuation}</th>
                   <th className="grid-row">
                     <span
                       className={`status ${polos.active ? "-green" : "-red"}`}
                     ></span>
                   </th>
                   <th>
-                    <Link to={`/polo/${polos.id}`}>
-                      <AiFillEye />
-                    </Link>
+                    <Link to={`/polo/${polos.id}`}>Aqui</Link>
                   </th>
                 </tr>
               ))}
@@ -64,4 +55,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Search;
